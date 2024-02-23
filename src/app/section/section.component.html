@@ -1,0 +1,17 @@
+<form [formGroup]="sectionForm" (ngSubmit)="newSection()">
+
+
+  <input type="text" formControlName="code" placeholder="code" />
+  <input type="text" formControlName="nom" placeholder="nom">
+  <input type="text" formControlName="professeurDirigeantId" placeholder="Matricule professeur">
+
+
+  <select  multiple formControlName="coursId">
+    <option *ngFor="let e of array" >
+      {{e.mnemonique}}
+    </option>
+  </select>
+  <input type="submit">
+
+
+</form>

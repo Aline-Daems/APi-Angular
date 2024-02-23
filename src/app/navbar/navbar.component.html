@@ -1,8 +1,13 @@
-<nav>
+
+
+<nav *ngIf="isAuthenticated" >
   <ul>
     <li>
-      <a routerLink="/register">S'inscrire</a>
+
       <a routerLink="/login">Se connecter</a>
+      <a routerLink="/course">Nouveau cours</a>
+      <a routerLink="/section">Nouvelle section</a>
+      <a routerLink="/student">Enregistrer un nouvel étudiant</a>
     </li>
   </ul>
 </nav>

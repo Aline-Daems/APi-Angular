@@ -3,7 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {AuthDTO, loginForm, registerForm, User} from "../Models/user";
 
 import {UrlApil} from "../urlApil";
-import {tap} from "rxjs";
+import {BehaviorSubject, tap} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +11,7 @@ import {tap} from "rxjs";
 export class UserService {
 
 
+  userConnected = new BehaviorSubject<string | null>(null)
  //  url = "localhost:8080/"
   constructor(private readonly _httpClient: HttpClient,
               @Inject(UrlApil) private  _url: string) {
@@ -32,16 +33,22 @@ export class UserService {
         // on set l'item du localStorage
         localStorage.setItem("token", data.token);
         localStorage.setItem("login", data.login)
-
+        this.userConnected.next(data.login)
 
       })
 
     )
 
-  }
 
+
+  }
+/*  isAuthenticated(){
+    return this.isAuthenticated.value;
+  }*/
   register(registerForm : registerForm){
     return this._httpClient.post(this._url+'professors/create', registerForm)
+
+    // bug manque l'id du cours dans le register form
 
   }
 }

@@ -7,11 +7,14 @@ import { AllUsersComponent } from './all-users/all-users.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {UrlApil} from "./urlApil";
 import { LoginComponent } from './login/login.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { BienvenueComponent } from './bienvenue/bienvenue.component';
 import { RegisterComponent } from './register/register.component';
 import {authInterceptor} from "./interceptor/auth.interceptor";
 import { NavbarComponent } from './navbar/navbar.component';
+import { CoursesComponent } from './courses/courses.component';
+import { SectionComponent } from './section/section.component';
+import { RegisterStudentComponent } from './register-student/register-student.component';
 
 
 @NgModule({
@@ -22,15 +25,19 @@ import { NavbarComponent } from './navbar/navbar.component';
     BienvenueComponent,
     RegisterComponent,
     NavbarComponent,
+    CoursesComponent,
+    SectionComponent,
+    RegisterStudentComponent,
 
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        FormsModule
+    ],
   providers: [
 
     {provide : UrlApil, useValue:"http://localhost:8080/"},

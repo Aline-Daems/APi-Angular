@@ -1,8 +1,9 @@
 body{
-  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 42%, rgba(1,8,134,1) 100%);
+
 }
 form {
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.2);
   border: 1px solid rgba(255,255,255,0.2);
   border-radius: 25px;
   box-shadow: 0px 3px 13px 12px rgba(0,0,0,0.54);
@@ -13,6 +14,7 @@ form {
   justify-content: center;
   align-items: center;
   margin: auto;
+  margin-top:10rem;
 }
 
 input{
@@ -21,24 +23,43 @@ input{
   border-bottom: 1px solid white;
   margin-bottom: 1rem;
   outline:none;
+  color:#eacdee;
+
 
 }
 
 
 input[type="submit"] {
-  border: none; /* Supprime la bordure */
-  background: none; /* Supprime l'arrière-plan */
+  border: 1px solid #c4146c; /* Supprime la bordure */
+  border-radius:25px;
+  background: #764ba2; /* Supprime l'arrière-plan */
   cursor: pointer;
+  color:#fff;
+  padding:0.5rem;
 }
 
+input[type="submit"]:hover{
+  background: #667eea; /* Supprime l'arrière-plan */
+}
+
+
+input::placeholder{
+  color: #caa6d9;
+}
 a{
   text-decoration: none;
   color: white;
-
-
-
 }
 
 ul li{
   list-style:none;
 }
+
+select{
+  background: transparent;
+  width:11rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  color: #eacdee;
+}
+

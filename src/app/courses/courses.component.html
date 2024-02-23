@@ -1,0 +1,13 @@
+<form [formGroup]="courseForm" (ngSubmit)="newCourse()">
+
+
+  <input type="text" formControlName="mnemonique" placeholder="mnemonique" />
+  <input type="text" formControlName="intitule" placeholder="intitule">
+  <input type="text" formControlName="resume" placeholder="resume">
+  <input type="text" formControlName="sectionId" placeholder="section">
+  <input type="text" formControlName="professeurTitulaireId" placeholder="professeur">
+
+  <input type="submit">
+
+
+</form>
